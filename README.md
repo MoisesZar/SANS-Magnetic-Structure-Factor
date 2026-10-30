@@ -12,19 +12,19 @@ The script computes the magnetic correlation functions for a pair of interacting
   <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/3c4aef00-e550-470e-ab76-e3c5c6c060a3" />
 </div>
 
-**Figure 1:** 2D scattering patterns in the detector plane at $H = 20$ mT and $H = 3$ T for Polaris $\pm$ and unpolarized SANS. The interparticle exchange is varied ($A_{\text{inter}} = -A_{\text{bulk}}, 0, +A_{\text{bulk}}$).
+**Figure 1:** 2D scattering patterns in the detector plane at $H = 20\,\mathrm{mT}$ and $H = 3\,\mathrm{T}$ for Polaris $\pm$ and unpolarized SANS. The interparticle exchange is varied ($A_{\mathrm{inter}} = -A_{\mathrm{bulk}}, 0, +A_{\mathrm{bulk}}$).
 
 <div style="text-align: center;">
   <img width="4453" height="1592" alt="fig_polaris_radial_20mT_vs_3T" src="https://github.com/user-attachments/assets/529f0383-80c4-4edc-a60d-0f1494e8f19f" />
 </div>
 
-**Figure 2:** Polaris $\pm$ and unpolarized intensity at $q \in [0.2,\,3.0]\ \text{nm}^{-1}$, evaluated at $H = 20\ \text{mT}$ (left) and $H = 3\ \text{T}$ (right). The non-correlated contribution (NC) is shown at $5\ \text{K}$ (dashed black) and $300\ \text{K}$ (dotted red); the correlated part is shown for $A_{\text{inter}} = -A_{\text{bulk}}$ (blue), $A_{\text{inter}} = 0$ (orange) and $A_{\text{inter}} = +A_{\text{bulk}}$ (green), for $D/\xi = 0$ (solid thick) and $D/\xi = 0.01,\,0.05,\,0.10$ (thin lines). In the high field conditions, the dipolar overlaps $A>0$.
+**Figure 2:** Polaris $\pm$ and unpolarized intensity at $q \in [0.2,\,3.0]\,\mathrm{nm}^{-1}$, evaluated at $H = 20\,\mathrm{mT}$ (left) and $H = 3\,\mathrm{T}$ (right). The non-correlated contribution (NC) is shown at $5\,\mathrm{K}$ (dashed black) and $300\,\mathrm{K}$ (dotted red); the correlated part is shown for $A_{\mathrm{inter}} = -A_{\mathrm{bulk}}$ (blue), $A_{\mathrm{inter}} = 0$ (orange) and $A_{\mathrm{inter}} = +A_{\mathrm{bulk}}$ (green), for $D/\xi = 0$ (solid thick) and $D/\xi = 0.01,\,0.05,\,0.10$ (thin lines). In the high field conditions, the dipolar overlaps $A>0$.
 
 <div style="text-align: center;">
   <img width="4463" height="1682" alt="fig_polaris_angular_20mT_vs_3T (1)" src="https://github.com/user-attachments/assets/c85c860c-43fe-43d9-8a1f-347fe80d1476" />
 </div>
 
-**Figure 3:** Angular Polaris $\pm$ intensity $I(\theta)$ integrated over $q \in [0.75,\,0.85]\ \text{nm}^{-1}$, evaluated at $H = 20\ \text{mT}$ (left) and $H = 3\ \text{T}$ (right). The non-correlated contribution (NC) is shown at $5\ \text{K}$ (dashed black) and $300\ \text{K}$ (dotted red); the correlated part is shown for $A_{\text{inter}} = -A_{\text{bulk}}$ (blue), $A_{\text{inter}} = 0$ (orange) and $A_{\text{inter}} = +A_{\text{bulk}}$ (green), for $D/\xi = 0$ (solid thick) and $D/\xi = 0.01,\,0.05,\,0.10$ (thin lines).
+**Figure 3:** Angular Polaris $\pm$ intensity $I(\theta)$ integrated over $q \in [0.75,\,0.85]\,\mathrm{nm}^{-1}$, evaluated at $H = 20\,\mathrm{mT}$ (left) and $H = 3\,\mathrm{T}$ (right). The non-correlated contribution (NC) is shown at $5\,\mathrm{K}$ (dashed black) and $300\,\mathrm{K}$ (dotted red); the correlated part is shown for $A_{\mathrm{inter}} = -A_{\mathrm{bulk}}$ (blue), $A_{\mathrm{inter}} = 0$ (orange) and $A_{\mathrm{inter}} = +A_{\mathrm{bulk}}$ (green), for $D/\xi = 0$ (solid thick) and $D/\xi = 0.01,\,0.05,\,0.10$ (thin lines).
 
 ---
 
@@ -45,13 +45,13 @@ where $\tilde{F}_\alpha^{(i)}(\mathbf{q})$ is the normalized Fourier transform o
 For an unpolarized incident beam, the magnetic intensity is obtained by taking the trace of the Halpern-Johnson matrix $B(\mathbf{q})$ and the magnetic structure factor:
 
 $$
-I_{\text{unpol}}(\mathbf{q}) = N M_s^2 V_p^2 \text{Tr}[B(\mathbf{q}) \cdot \mathfrak{S}(\mathbf{q})]
+I_{\mathrm{unpol}}(\mathbf{q}) = N M_s^2 V_p^2 \mathrm{Tr}[B(\mathbf{q}) \cdot \mathfrak{S}(\mathbf{q})]
 $$
 
 where $B(\mathbf{q}) = \mathbb{I} - \hat{\mathbf{q}}\hat{\mathbf{q}}^T$ projects the magnetization onto the plane perpendicular to $\mathbf{q}$. The unpolarized intensity explicitly reads:
 
 $$
-I_{\text{unpol}}(\mathbf{q}) \propto \mathfrak{S}_{xx} + \mathfrak{S}_{yy} \cos^2\theta + \mathfrak{S}_{zz} \sin^2\theta - 2\mathfrak{S}_{yz} \sin\theta \cos\theta
+I_{\mathrm{unpol}}(\mathbf{q}) \propto \mathfrak{S}_{xx} + \mathfrak{S}_{yy} \cos^2\theta + \mathfrak{S}_{zz} \sin^2\theta - 2\mathfrak{S}_{yz} \sin\theta \cos\theta
 $$
 
 ### 2. Polarized SANS (Polaris $\pm$)
@@ -74,7 +74,7 @@ In the script, the matrices $B_{\alpha\beta}$ for the Polaris channels are const
 
 ### 3. Correlation Model
 
-The code separates the structure factor into a self-correlation $C^{\text{self}}_{\alpha\beta}(\mathbf{q})$ and a cross-correlation between particles in contact $C^{D}_{\alpha\beta}(\mathbf{q})$. An Ornstein-Zernike type exponential decay is used to interpolate between the uncorrelated limit ($\xi \to 0$) and the highly correlated limit ($D/\xi \to 0$):
+The code separates the structure factor into a self-correlation $C_{\alpha\beta}^{\mathrm{self}}(\mathbf{q})$ and a cross-correlation between particles in contact $C_{\alpha\beta}^{D}(\mathbf{q})$. An Ornstein-Zernike type exponential decay is used to interpolate between the uncorrelated limit ($\xi \to 0$) and the highly correlated limit ($D/\xi \to 0$):
 
 $$
 C_{\alpha\beta}(\mathbf{q},r) = C_{\alpha\beta}^{\infty}(\mathbf{q}) + e^{-\frac{r-D}{\xi}} \left[ C_{\alpha\beta}^D(\mathbf{q}) - C_{\alpha\beta}^{\infty}(\mathbf{q}) \right]
@@ -83,13 +83,13 @@ $$
 Under this model, the structure factor for the uncorrelated (NC) system is:
 
 $$
-\mathfrak{S}_{\alpha\beta}^{\text{NC}}(\mathbf{q}) = C_{\alpha\beta}^{\text{self,NC}}(\mathbf{q}) + [S(\mathbf{q}) - 1]C_{\alpha\beta}^{\infty}(\mathbf{q})
+\mathfrak{S}_{\alpha\beta}^{\mathrm{NC}}(\mathbf{q}) = C_{\alpha\beta}^{\mathrm{self,NC}}(\mathbf{q}) + [S(\mathbf{q}) - 1]C_{\alpha\beta}^{\infty}(\mathbf{q})
 $$
 
 And for the highly correlated system:
 
 $$
-\mathfrak{S}_{\alpha\beta}^{C}(\mathbf{q}) \approx C_{\alpha\beta}^{\text{self,C}}(\mathbf{q}) + [S(\mathbf{q}) - 1]C_{\alpha\beta}^{\infty}(\mathbf{q}) + \Delta C_{\alpha\beta}^{D,\infty}(\mathbf{q}) e^{\frac{D}{\xi}} [B(\mathbf{q},\xi) + S(\mathbf{q}) - 1]
+\mathfrak{S}_{\alpha\beta}^{C}(\mathbf{q}) \approx C_{\alpha\beta}^{\mathrm{self,C}}(\mathbf{q}) + [S(\mathbf{q}) - 1]C_{\alpha\beta}^{\infty}(\mathbf{q}) + \Delta C_{\alpha\beta}^{D,\infty}(\mathbf{q}) e^{\frac{D}{\xi}} [B(\mathbf{q},\xi) + S(\mathbf{q}) - 1]
 $$
 
 where $S(\mathbf{q})$ is the structural structure factor (assumed hard spheres), and $B(\mathbf{q},\xi)$ is the Fourier transform of the correlation function.
