@@ -11,11 +11,6 @@ The script computes the magnetic correlation functions for a pair of interacting
   - [2. Polarized SANS (Polaris \(\pm\))](#2-polarized-sans-polaris-pm)
   - [3. Correlation Model](#3-correlation-model)
 - [Requirements](#requirements)
-- [Usage](#usage)
-- [Repository Structure](#repository-structure)
-- [Output](#output)
-- [Notes](#notes)
-- [References](#references)
 - [License](#license)
 
 ---
