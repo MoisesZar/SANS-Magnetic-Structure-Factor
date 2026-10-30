@@ -4,24 +4,38 @@ Python and Ubermag tool to model and simulate the **magnetic structure factor** 
 
 The script computes the magnetic correlation functions for a pair of interacting nanoparticles under different interparticle exchange couplings via micromagnetic simulations. It then reconstructs the expected scattering intensities for both **unpolarized SANS** and **polarized SANS (Polaris $\pm$)**, evaluating the uncorrelated (NC) limit, the highly correlated limit, and the intermediate regimes using an Ornstein-Zernike correlation length $\xi$.
 
+## Table of Contents
+- [Visuals](#visuals)
+- [Physics Model](#physics-model)
+  - [1. Unpolarized SANS](#1-unpolarized-sans)
+  - [2. Polarized SANS (Polaris \(\pm\))](#2-polarized-sans-polaris-pm)
+  - [3. Correlation Model](#3-correlation-model)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Repository Structure](#repository-structure)
+- [Output](#output)
+- [Notes](#notes)
+- [References](#references)
+- [License](#license)
+
 ---
 
 ## Visuals
 
 <div style="text-align: center;">
-  <img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/3c4aef00-e550-470e-ab76-e3c5c6c060a3" />
+  <img width="1600" height="900" alt="2D SANS patterns" src="https://github.com/user-attachments/assets/3c4aef00-e550-470e-ab76-e3c5c6c060a3" />
 </div>
 
 **Figure 1:** 2D scattering patterns in the detector plane at $H = 20\,\mathrm{mT}$ and $H = 3\,\mathrm{T}$ for Polaris $\pm$ and unpolarized SANS. The interparticle exchange is varied ($A_{\mathrm{inter}} = -A_{\mathrm{bulk}}, 0, +A_{\mathrm{bulk}}$).
 
 <div style="text-align: center;">
-  <img width="4453" height="1592" alt="fig_polaris_radial_20mT_vs_3T" src="https://github.com/user-attachments/assets/529f0383-80c4-4edc-a60d-0f1494e8f19f" />
+  <img width="1600" height="900" alt="fig_polaris_radial_20mT_vs_3T" src="https://github.com/user-attachments/assets/529f0383-80c4-4edc-a60d-0f1494e8f19f" />
 </div>
 
 **Figure 2:** Polaris $\pm$ and unpolarized intensity at $q \in [0.2,\,3.0]\,\mathrm{nm}^{-1}$, evaluated at $H = 20\,\mathrm{mT}$ (left) and $H = 3\,\mathrm{T}$ (right). The non-correlated contribution (NC) is shown at $5\,\mathrm{K}$ (dashed black) and $300\,\mathrm{K}$ (dotted red); the correlated part is shown for $A_{\mathrm{inter}} = -A_{\mathrm{bulk}}$ (blue), $A_{\mathrm{inter}} = 0$ (orange) and $A_{\mathrm{inter}} = +A_{\mathrm{bulk}}$ (green), for $D/\xi = 0$ (solid thick) and $D/\xi = 0.01,\,0.05,\,0.10$ (thin lines). In the high field conditions, the dipolar overlaps $A>0$.
 
 <div style="text-align: center;">
-  <img width="4463" height="1682" alt="fig_polaris_angular_20mT_vs_3T (1)" src="https://github.com/user-attachments/assets/c85c860c-43fe-43d9-8a1f-347fe80d1476" />
+  <img width="1600" height="900" alt="fig_polaris_angular_20mT_vs_3T" src="https://github.com/user-attachments/assets/c85c860c-43fe-43d9-8a1f-347fe80d1476" />
 </div>
 
 **Figure 3:** Angular Polaris $\pm$ intensity $I(\theta)$ integrated over $q \in [0.75,\,0.85]\,\mathrm{nm}^{-1}$, evaluated at $H = 20\,\mathrm{mT}$ (left) and $H = 3\,\mathrm{T}$ (right). The non-correlated contribution (NC) is shown at $5\,\mathrm{K}$ (dashed black) and $300\,\mathrm{K}$ (dotted red); the correlated part is shown for $A_{\mathrm{inter}} = -A_{\mathrm{bulk}}$ (blue), $A_{\mathrm{inter}} = 0$ (orange) and $A_{\mathrm{inter}} = +A_{\mathrm{bulk}}$ (green), for $D/\xi = 0$ (solid thick) and $D/\xi = 0.01,\,0.05,\,0.10$ (thin lines).
@@ -100,8 +114,10 @@ where $S(\mathbf{q})$ is the structural structure factor (assumed hard spheres),
 
 - Python 3.9+
 - [Ubermag](https://ubermag.github.io/) (`oommfc`, `discretisedfield`, `micromagneticmodel`)
-- OOMMF installed and available in `PATH`
+- **OOMMF** installed and available in `PATH` (see [OOMMF installation guide](https://math.nist.gov/oommf/))
 - `numpy`, `scipy`, `matplotlib`, `tqdm`
+
+Install the Python dependencies with:
 
 ```bash
 pip install -r requirements.txt
