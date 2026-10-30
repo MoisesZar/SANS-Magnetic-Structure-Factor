@@ -1,0 +1,7 @@
+numpy>=1.23.0
+scipy>=1.9.0
+matplotlib>=3.6.0
+tqdm>=4.65.0
+oommfc>=0.12.0
+discretisedfield>=0.15.0
+micromagneticmodel>=0.12.0
